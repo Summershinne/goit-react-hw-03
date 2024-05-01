@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 export default function App() {
  const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem("savedContacts");
-    console.log(savedContacts);
     if (savedContacts !== null) {
       return JSON.parse(savedContacts)
     }
