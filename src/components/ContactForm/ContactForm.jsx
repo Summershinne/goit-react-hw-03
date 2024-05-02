@@ -14,7 +14,7 @@ export default function ContactForm({ onAdd }) {
         const newContact = {
          id: nanoid(),
         name: values.name,
-        number: values.namber
+        number: values.number
      }   
         onAdd(newContact);
         action.resetForm();
@@ -26,9 +26,11 @@ export default function ContactForm({ onAdd }) {
         <Formik initialValues={{ name:"", number:""}} onSubmit={ handleSubmit} validationSchema={FeedbackSchema}>
             <Form className={css.formContainer}>
                 <label htmlFor={nameFieldId}>Name</label>
-                <Field type='text' name='name' id={nameFieldId } />
+                <Field type='text' name='name' id={nameFieldId} />
+                <ErrorMessage name="name" component="span" />
                 <label htmlFor={numberFieldId}>Number</label>
-                <Field type='text' name='number' id={ numberFieldId} />
+                <Field type="text" name="number" id={numberFieldId} />
+                <ErrorMessage name="number" component="span" />
             <button className={css.btn} type='submit'>Add contact</button>
             </Form>
         </Formik> 

@@ -31,7 +31,7 @@ export default function App() {
   };
 
   const deleteContact = (contactId) => {
-    setCotnacts((prevContacts) => { return prevContacts.flter((contact) => contact.id !== contactId) })
+    setContacts((prevContacts) => { return prevContacts.filter((contact) => contact.id !== contactId) })
   };
 
   const visibleContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()));
